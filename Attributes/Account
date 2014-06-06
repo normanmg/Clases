@@ -1,0 +1,36 @@
+public class Account {
+    
+    private double saldoInicial;
+    private boolean hayError;
+    
+    public Account()
+    {      
+            saldoInicial=0;
+            hayError=false;
+    }
+    
+    
+    /**
+     * Este ,etodo sirve para aumentar la cuenta de un usuario 
+     * @param monto Parametro para recibir el nuevo monto
+     */
+    public void Deposito(double monto)
+    {        
+         setSaldoInicial(getSaldoInicial() + monto);
+    }
+    
+    /**
+     *Este ,etodo sirve para disminuir la cuenta de un usuario 
+     * @param monto Parametro para recibir el nuevo monto
+     */
+    public void Retiro(double monto)
+    {
+        if(getSaldoInicial()>=monto)
+           setSaldoInicial(getSaldoInicial() - monto);  
+        else
+            setHayError(true);
+    }        
+
+    /**
+     * @return the saldoInicial
+     */
