@@ -1,0 +1,99 @@
+public class Ejercicio2 {
+    private String cadena;
+    
+    public String MediaCadena()
+    {
+        String retorno="";
+        for(int i = 0; i < getCadena().length()/2 ; i++){
+            retorno+=getCadena().charAt(i);
+        }
+        return retorno;
+    }
+    
+    public String UltimoValor()
+    {
+        return getCadena().charAt(getCadena().length()-1)+"";
+    }
+    
+    public String AlRevez()
+    {
+        String retorno="";
+        
+        for(int i = getCadena().length()-1; i >= 0; i--){
+            retorno+=getCadena().charAt(i);
+        }
+        return retorno;
+    }
+
+    public String Guion()
+    {
+        String retorno="";
+        for(int i = 0; i < getCadena().length() ; i++){
+            
+            if(getCadena().length()-1==1)
+            {
+                retorno+=getCadena().charAt(i);
+            }
+            else
+            {
+                retorno+=getCadena().charAt(i)+"_";
+            }
+        }
+        return retorno;
+    }
+    
+    
+    public int Vocales()
+    {
+        int cantidadvocales=0;
+        for(int i = 0; i < getCadena().length() ; i++){
+            
+            if((getCadena().charAt(i)=='A')||
+               (getCadena().charAt(i)=='a')||    
+               (getCadena().charAt(i)=='E')||      
+               (getCadena().charAt(i)=='e')|| 
+               (getCadena().charAt(i)=='I')||     
+               (getCadena().charAt(i)=='i')||      
+               (getCadena().charAt(i)=='O')||     
+               (getCadena().charAt(i)=='o')|| 
+               (getCadena().charAt(i)=='U')||     
+               (getCadena().charAt(i)=='u'))
+            {
+                cantidadvocales++;
+            }
+        }
+        return cantidadvocales;
+    }
+    
+    public boolean Palindromo()
+    {
+        String palabraAlRevez="";
+        
+        for(int i = getCadena().length()-1; i >= 0; i--){
+            palabraAlRevez+=+getCadena().charAt(i);
+        }
+        
+        if(getCadena().equals(palabraAlRevez))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }   
+    
+    /**
+     * @return the cadena
+     */
+    public String getCadena() {
+        return cadena;
+    }
+
+    /**
+     * @param cadena the cadena to set
+     */
+    public void setCadena(String cadena) {
+        this.cadena = cadena;
+    }
+}
