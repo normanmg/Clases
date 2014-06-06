@@ -1,0 +1,116 @@
+public class Switch {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        int valor1=0;
+        int valor2=0;
+        double resultado;
+        char continuar;
+        boolean validar=true;
+        int opcion=0;
+        Scanner teclado=new Scanner(System.in); 
+        
+        Operacion oOperacion=new Operacion();
+        do
+        {
+            
+            System.out.println("Digite la operacion que desea evaluar");
+            System.out.println("1.Suma");
+            System.out.println("2.Resta");
+            System.out.println("3.Division ");
+            System.out.println("4.Multiplicacion ");
+            System.out.println("5.Raiz ");
+            System.out.println("6.Potencia ");
+            
+           System.out.println("Digite la operacion que desea evaluar"+"\n"); 
+           opcion=Integer.parseInt(teclado.nextLine());
+           switch(opcion)
+           {
+                case 1:
+                   
+                     System.out.println("Digite el valor del primer digito");
+                     valor1=Integer.parseInt(teclado.nextLine());
+                     System.out.println("Digite el valor del segundo digito");
+                     valor2=Integer.parseInt(teclado.nextLine()); 
+                     oOperacion.Sumar(valor1, valor2);
+                     resultado= oOperacion.Sumar(valor1, valor2);
+                     System.out.println(resultado);
+                break;
+               
+                case 2:
+                   
+                     System.out.println("Digite el valor del primer digito");
+                     valor1=Integer.parseInt(teclado.nextLine());
+                     System.out.println("Digite el valor del segundo digito");
+                     valor2=Integer.parseInt(teclado.nextLine()); 
+                     oOperacion.Resta(valor1, valor2);
+                     resultado= oOperacion.Resta(valor1, valor2);
+                     System.out.println(resultado);
+                break;
+                    
+                case 3:
+                   
+                     System.out.println("Digite el valor del primer digito");
+                     valor1=Integer.parseInt(teclado.nextLine());
+                     System.out.println("Digite el valor del segundo digito");
+                     valor2=Integer.parseInt(teclado.nextLine()); 
+                     oOperacion.Division(valor1, valor2); 
+                     resultado= oOperacion.Division(valor1, valor2);
+                     System.out.println(resultado);
+                break;
+                    
+                case 4:
+                   
+                     System.out.println("Digite el valor del primer digito");
+                     valor1=Integer.parseInt(teclado.nextLine());
+                     System.out.println("Digite el valor del segundo digito");
+                     valor2=Integer.parseInt(teclado.nextLine()); 
+                     oOperacion.Multiplicacion(valor1, valor2);
+                     resultado= oOperacion.Multiplicacion(valor1, valor2);
+                     System.out.println(resultado);
+                break;
+                    
+                case 5:
+                   
+                     System.out.println("Digite el valor del primer digito");
+                     valor1=Integer.parseInt(teclado.nextLine());
+                     resultado= oOperacion.Raiz(valor1);
+                     System.out.println(resultado);
+                break;   
+                    
+                case 6:
+                   
+                     System.out.println("Digite el valor del primer digito");
+                     valor1=Integer.parseInt(teclado.nextLine());
+                     System.out.println("Digite el valor del segundo digito");
+                     valor2=Integer.parseInt(teclado.nextLine()); 
+                     oOperacion.Potencia(valor1, valor2); 
+                     resultado= oOperacion.Potencia(valor1, valor2);
+                     System.out.println(resultado);
+                break;
+                default:
+                    
+                    break;
+            }        
+                   
+            
+           System.out.println("Desea continuar con otra operacion S/N");
+           continuar=teclado.nextLine() .charAt(0);
+           if((continuar=='S')||(continuar=='s'))
+           {   
+               validar=true;
+           }
+           else
+           {
+               validar=false;
+           }    
+        }while (validar);
+        
+                
+    }
+    
+}
